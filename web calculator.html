@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web calculator</title>
+    <style type="text/css">
+        input
+        {
+            width:50px;
+            height:50px;
+        }
+        #screen
+        {
+            width:150px;
+            height:45px;
+        }
+        table
+        {
+            margin:100px auto;
+            border:3px solid aliceblue;
+        }
+    </style>
+    <script type="text/javascript">
+        function add(clickNum)//输入
+        {
+            document.getElementById("screen").value+=clickNum.value;
+        }
+        function clears() //清屏
+        {
+            document.getElementById("screen").value="";
+        }
+        function getResult()//结果
+        {
+            var a = document.getElementById("screen").value;
+            document.getElementById("screen").value=eval(a);
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="3"><input id="screen"></th>
+            <th><input type="button" value="C" onclick="clears()"></th>
+        </tr>
+        <tr>
+            <th><input type="button" value="7" onclick="add(this)"></th>
+            <th><input type="button" value="8" onclick="add(this)"></th>
+            <th><input type="button" value="9" onclick="add(this)"></th>
+            <th><input type="button" value="/" onclick="add(this)"></th>
+        </tr>
+        <tr>
+            <th><input type="button" value="4" onclick="add(this)"></th>
+            <th><input type="button" value="5" onclick="add(this)"></th>
+            <th><input type="button" value="6" onclick="add(this)"></th>
+            <th><input type="button" value="*" onclick="add(this)"></th>
+        </tr>
+        <tr>
+            <th><input type="button" value="1" onclick="add(this)"></th>
+            <th><input type="button" value="2" onclick="add(this)"></th>
+            <th><input type="button" value="3" onclick="add(this)"></th>
+            <th><input type="button" value="-" onclick="add(this)"></th>
+        </tr>
+        <tr>
+            <th><input type="button" value="0" onclick="add(this)"></th>
+            <th><input type="button" value="." onclick="add(this)"></th>
+            <th><input type="button" value="=" onclick="getResult()"></th>
+            <th><input type="button" value="+" onclick="add(this)"></th>
+        </tr>
+    </table>
+</body>
+</html>
